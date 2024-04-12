@@ -210,6 +210,7 @@ export class NexeCompiler {
         cwd: this.src,
         env: this.env,
         stdio: this.log.verbose ? 'inherit' : 'ignore',
+        shell: true, // https://github.com/nexe/nexe/pull/1092
       })
         .once('error', (e: Error) => {
           if (this.log.verbose) {
